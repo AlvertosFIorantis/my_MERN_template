@@ -73,7 +73,7 @@ const signup = async (req, res, next) => {
   console.log(createdUser)
   //girnaei _id
   console.log(createdUser.id)
-  //ala me to createdUser.id boro na kano acces to id sto createdUSer parolo pou to field mesa sto object einai _id to mongoose omos mou epitrepei na grafo .id katefthiean pano sto object !!!!!
+  //ala me to createdUser.id boro na kano acces to id sto createdUSer parolo pou to field mesa sto object einai _id to mongoose omos mou epitrepei na grafo .id katefthiean pano sto object !!!!!c
   // tora pou exo kanei store to user sto database (eimai meta to crateUser.save()) kai ksero oti exo valdi user thelo na kano generate to jsaonwebtoken
   let token
   try {
