@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./signup.css";
 import axios from "axios";
 import { connect } from "react-redux";
-import { signUpUserAction } from "../../_actions/actions/user_actions";
+import {
+  signUpUserAction,
+  signUpUserImageAction,
+} from "../../_actions/actions/user_actions";
+import ImageUpload from "../../shared/image_upload/imageUpload";
 
 function Signup(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [strength, setStrength] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState();
 
   const [validations, setValidations] = useState([]);
 
@@ -77,12 +82,22 @@ function Signup(props) {
   // };
   const sendDataToServer = async (event) => {
     event.preventDefault();
-    props.signUpUserAction(
-      JSON.stringify({
-        email: email,
-        password: password,
-      })
-    );
+    //an den exo uploaded file stelno aplo action mono me json
+    if (!uploadedImage) {
+      props.signUpUserAction(
+        JSON.stringify({
+          email: email,
+          password: password,
+        })
+      );
+    }
+    if (uploadedImage) {
+      props.signUpUserImageAction(email, password, uploadedImage);
+    }
+  };
+
+  const uploadImageHandler = (item) => {
+    setUploadedImage(item);
   };
 
   const protectedRouteHandler = async (event) => {
@@ -191,6 +206,8 @@ function Signup(props) {
             </li>
           </ul>
         )}
+        {/* to center eiani ena prop pou pernao sto componte  gian na alakso to css sto compoente oste na to valo sto kedro */}
+        <ImageUpload center uploadImageHandler={uploadImageHandler} />
 
         <button disabled={strength < 4} onClick={sendDataToServer}>
           Sign Up
@@ -213,6 +230,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   // prepei na kano import sto conmponent to action pou thelo apo to actions.js file
   signUpUserAction: signUpUserAction,
+  signUpUserImageAction: signUpUserImageAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
