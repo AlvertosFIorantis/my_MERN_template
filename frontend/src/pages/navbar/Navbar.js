@@ -11,34 +11,34 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <IconContext.Provider value={{ className: "nav-link-icons" }}>
-      <nav class="navbar">
-        <ul class="navbar-nav">
-          <li class="logo">
+      <nav className="navbar">
+        <ul className="navbar-nav">
+          <li className="logo">
             <NavLink to="/" exact className="nav-link">
-              <span class="link-text">Home Portal</span>
+              <span className="link-text">Home Portal</span>
               <FaHome />
             </NavLink>
           </li>
 
-          <li class="nav-item">
+          <li className="nav-item">
             <NavLink to="/signup" exact className="nav-link">
               <AiOutlineSolution />
-              <span class="link-text">Sign Up</span>
+              <span className="link-text">Sign Up</span>
             </NavLink>
           </li>
 
-          <li class="nav-item">
+          <li className="nav-item">
             <NavLink to="/login" exact className="nav-link">
               <MdPerson />
 
-              <span class="link-text">Login</span>
+              <span className="link-text">Login</span>
             </NavLink>
           </li>
 
-          <li class="nav-item" id="themeButton">
+          <li className="nav-item" id="themeButton">
             <NavLink to="/logout" exact className="nav-link">
               <FaUserAltSlash size="100px" />
-              <span class="link-text">Log out</span>
+              <span className="link-text">Log out</span>
             </NavLink>
           </li>
         </ul>
