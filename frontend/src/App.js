@@ -1,6 +1,7 @@
 import React from "react";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
+import Logout from "./pages/logout/Logout";
 import HomePage from "./pages/dummy_pages/HomePage";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -26,6 +27,7 @@ function App(props) {
           <Route exact path="/" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/test" component={auth_check(user_test_page)} />
+          <Route exact path="/logout" component={auth_check(Logout)} />
           {/* <Route exact path="/test" component={user_test_page} /> */}
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>

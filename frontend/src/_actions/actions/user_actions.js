@@ -112,3 +112,12 @@ export const signUpUserImageAction = (
     console.log("some error from backend");
   }
 };
+
+export const logOutUserAction = (history) => async (dispatch, getState) => {
+  dispatch({
+    type: "LOGOUT_USER",
+    // boro na peraso san payload pragmata pou perno apo to backend
+    payload: null,
+  });
+  history.push("/");
+};
