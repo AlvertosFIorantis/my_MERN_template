@@ -3,14 +3,14 @@ import {
   SIGNUP_USER,
   AUTH_FAILED,
   SIGNUP_USER_IMAGE,
-} from "../_actions/constants/user_constants";
+} from '../_actions/constants/user_constants'
 
 // prepei pada na exo ena initial state
 const initialState = {
   token: null,
   errorMessage: null,
   userId: null,
-};
+}
 
 export default function (state = initialState, action) {
   // console.log(action);
@@ -40,23 +40,24 @@ export default function (state = initialState, action) {
         ...state,
         token: action.payload.token,
         userId: action.payload.userId,
-      };
+      }
     case SIGNUP_USER_IMAGE:
       return {
         ...state,
         token: action.payload.token,
         userId: action.payload.userId,
-      };
+      }
     case LOGIN_USER:
       return {
         ...state,
         token: action.payload.token,
         userId: action.payload.userId,
-      };
+        image: action.payload.image,
+      }
     case AUTH_FAILED:
-      return { ...state, errorMessage: action.payload.message };
+      return { ...state, errorMessage: action.payload.message }
     default:
-      console.log("reducer");
-      return state;
+      console.log('reducer')
+      return state
   }
 }
