@@ -7,6 +7,7 @@ import {
   signUpUserImageAction,
 } from "../../_actions/actions/user_actions";
 import ImageUpload from "../../shared/image_upload/imageUpload";
+import { withRouter } from "react-router-dom";
 
 function Signup(props) {
   const [email, setEmail] = useState("");
@@ -84,15 +85,23 @@ function Signup(props) {
     event.preventDefault();
     //an den exo uploaded file stelno aplo action mono me json
     if (!uploadedImage) {
+      //pernao 2 argument sto fucntion to ena einai ta data kai to alo to history oste otan einai eptixies to action na boro na kano to user redirect
       props.signUpUserAction(
         JSON.stringify({
           email: email,
           password: password,
-        })
+        }),
+        props.history
       );
     }
     if (uploadedImage) {
-      props.signUpUserImageAction(email, password, uploadedImage);
+      //pernao 4 argument sto fucntion to ena einai ta data kai to alo to history oste otan einai eptixies to action na boro na kano to user redirect
+      props.signUpUserImageAction(
+        email,
+        password,
+        uploadedImage,
+        props.history
+      );
     }
   };
 
@@ -233,4 +242,9 @@ const mapDispatchToProps = {
   signUpUserImageAction: signUpUserImageAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Signup));
+//xirisimopio to withRouter gia na boro na exo access sto history mesa sto action opote an einai eptixes to action na boro na kano redirect se alo url ton xiristi
+// tora sto action perano 2 arguments to ena eiani ta data kai to alo to props.history gia na boro na to exo access mesa sto action
+
+// sto link boro na do pos xrisimopio to "withROuter"
+// https://stackoverflow.com/questions/54036562/how-to-redirect-from-an-action-event-in-redux

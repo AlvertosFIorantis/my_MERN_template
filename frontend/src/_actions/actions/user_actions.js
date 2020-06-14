@@ -30,7 +30,8 @@ export const logInUserAction = (dataFromComponent) => async (
   }
 };
 
-export const signUpUserAction = (dataFromComponent) => async (
+//pernao 2 argument sto fucntion to ena einai ta data kai to alo to history oste otan einai eptixies to action na boro na kano to user redirect
+export const signUpUserAction = (dataFromComponent, history) => async (
   dispatch,
   getState
 ) => {
@@ -52,6 +53,7 @@ export const signUpUserAction = (dataFromComponent) => async (
       payload: responseData.data,
     });
     console.log("recieved data from backend");
+    history.push("/home");
   } catch (err) {
     console.log(err);
     dispatch({
@@ -65,10 +67,13 @@ export const signUpUserAction = (dataFromComponent) => async (
 
 //ftiaxno ean deftero action gia na kano signup stelnodas data sto server pou mazi stenlo kai image ektos apo text. Apo ti stigmi pou thelo na stilo image den boro na xrisimopiso json opote prepei na stilo form data. Sto form data boro na stilo kanonika kai json data kai image data opote ta inpub gia to email kai to passwrod eiani akrivos to idio kai theoritka tha borousa na eixa ena function pou na estlna piso form data ala thelo gia parctice na ta kano ksexorista
 
-export const signUpUserImageAction = (email, password, image) => async (
-  dispatch,
-  getState
-) => {
+// to history pou pernao eian igia na boro na kano redirect to user an einai eptixes to action
+export const signUpUserImageAction = (
+  email,
+  password,
+  image,
+  history
+) => async (dispatch, getState) => {
   // edo vazo to logic pou thelo na ekteleite sto async request gia paradigma an thelo na alakso kati apo ta data pou perno apo to api peso ti gia pradigma ot iperno kati data apo to backend kai thelo na ta peraso san payload gia paradgiam exo token apo to logged in user
   try {
     //dimiourgo form data gia na boro na stilo image kai text data sto backend
@@ -96,6 +101,7 @@ export const signUpUserImageAction = (email, password, image) => async (
       payload: responseData.data,
     });
     console.log("received data from backend");
+    history.push("/home");
   } catch (err) {
     console.log(err);
     dispatch({

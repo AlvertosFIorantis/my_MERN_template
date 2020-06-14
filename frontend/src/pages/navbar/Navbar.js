@@ -14,14 +14,14 @@ export default function Navbar() {
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="logo">
-            <NavLink to="/" exact className="nav-link">
+            <NavLink to="/home" exact className="nav-link">
               <span className="link-text">Home Portal</span>
               <FaHome />
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink to="/signup" exact className="nav-link">
+            <NavLink to="/" exact className="nav-link">
               <AiOutlineSolution />
               <span className="link-text">Sign Up</span>
             </NavLink>
