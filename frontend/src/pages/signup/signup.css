@@ -7,7 +7,13 @@ main {
 
 form {
   --text-color: #afafaf;
-  max-width: 500px;
+  /* apo edo alazo poso megalo thelo na eina ito form */
+  max-width: 400px;
+  padding: 1rem 4rem;
+  border: 1px solid;
+  border-radius: 25px;
+  background-color: #0c2835;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 .field {
   width: 100%;
@@ -30,14 +36,14 @@ form {
   padding: 0.25rem 0;
   background: none;
   /* color: white; */
-  color: black;
+  color: var(--text-color);
   font-size: 1.2em;
   font-weight: bold;
   transition: border 500ms;
 }
 .valid {
   /* color: white; */
-  color: black;
+  color: var(--text-color);
 }
 .invalid {
   color: orangered;
@@ -49,7 +55,7 @@ form {
   display: block;
   height: 4px;
   width: 100%;
-  background: #d16dff;
+  background: #03b1ff;
   transform: scaleX(0);
   transform-origin: 0%;
   opacity: 0;
@@ -65,7 +71,9 @@ form {
 }
 /* Label animation */
 .label {
-  z-index: -1;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  z-index: 1;
   position: absolute;
   left: 0px;
   /* transform: translateY(-2rem); */
@@ -121,6 +129,7 @@ ul {
   padding: 0;
   font-size: 0.7rem;
   text-align: left;
+  color: var(--text-color);
 }
 /* Buttons */
 button {
@@ -143,4 +152,9 @@ button:disabled {
   font-size: 0.8rem;
   right: 0.25rem;
   bottom: 0.5rem;
+}
+
+/* Extra code gia backgourn !!!!!!!!!!!!!!!!!!!!! */
+.background {
+  background-color: rgb(237, 230, 230);
 }

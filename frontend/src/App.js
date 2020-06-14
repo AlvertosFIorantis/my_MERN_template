@@ -16,17 +16,20 @@ import "./App.css";
 function App(props) {
   return (
     <div className="App">
-      {props.token ? <Navbar /> : <div>alo navbar</div>}
+      {props.token ? <Navbar /> : null}
 
       {/* boro giro apo to switch stamtent na valo ena div/main tag kai na valo to css pou exo sto Navbar.css gia na kano push olo to contnate apo ta componets pou kano render pros ta deksia giati exo kai to navbar pou piani xoro */}
-      <Switch>
-        <Route exact path="/home" component={auth_check(HomePage)} />
-        <Route exact path="/" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/test" component={auth_check(user_test_page)} />
-        {/* <Route exact path="/test" component={user_test_page} /> */}
-        <Route path="*" component={() => "404 NOT FOUND"} />
-      </Switch>
+
+      <div className="container">
+        <Switch>
+          <Route exact path="/home" component={auth_check(HomePage)} />
+          <Route exact path="/" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/test" component={auth_check(user_test_page)} />
+          {/* <Route exact path="/test" component={user_test_page} /> */}
+          <Route path="*" component={() => "404 NOT FOUND"} />
+        </Switch>
+      </div>
     </div>
   );
 }

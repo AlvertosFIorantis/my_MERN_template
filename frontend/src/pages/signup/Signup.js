@@ -132,7 +132,7 @@ function Signup(props) {
     props.history.push("/test");
   };
   return (
-    <main>
+    <main className="background">
       <form>
         <div className="field">
           <input

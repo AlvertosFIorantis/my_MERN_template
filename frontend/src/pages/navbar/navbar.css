@@ -2,7 +2,7 @@
 
 :root {
   font-size: 16px;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
@@ -13,9 +13,9 @@
 
 /* to main prepei na to valo sto app oste olo to alo context na ksekinaei 5 rem pio deksia */
 main {
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   /* vazo to margin oste to navbar na min kani overlap to content pou exo diladi to kimeno apla metafero olo tokimeno st aristera san na vazo diladi space otan grafo sto word  to rem einai relevant unit se sxesi me to font size pou exo valei sto root element pou sto sigkekrimeno paradigma eiani 16px = 1rem*/
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .navbar {
