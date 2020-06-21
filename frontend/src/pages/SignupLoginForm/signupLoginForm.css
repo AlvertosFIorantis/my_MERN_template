@@ -49,7 +49,7 @@ button.ghost {
   border-color: #ffffff;
 }
 
-.container {
+.sign-up-body .container {
   background: #77a6f7;
   background: -webkit-linear-gradient(to right, #4d6d9a, #77a6f7);
   background: linear-gradient(to right, #4d6d9a, #77a6f7);
@@ -63,7 +63,7 @@ button.ghost {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1600px;
   min-height: 480px;
 }
 
