@@ -90,7 +90,7 @@ main {
   color: green;
 }
 
-.logo {
+.navbar .logo1 {
   /* afto einia gia to kimeno pou exo dipla apo ta velakia kai kato kano vizualis to logo svg  pou einia ta velakia */
   font-weight: bold;
   text-transform: uppercase;
@@ -102,6 +102,9 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.3ch;
   width: 100%;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: 0;
 }
 
 .navbar {

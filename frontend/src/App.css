@@ -1,9 +1,0 @@
-.App {
-  text-align: center;
-}
-
-.container {
-  margin-left: 0rem;
-  /* vazo to margin oste to navbar na min kani overlap to content pou exo diladi to kimeno apla metafero olo tokimeno st aristera san na vazo diladi space otan grafo sto word  to rem einai relevant unit se sxesi me to font size pou exo valei sto root element pou sto sigkekrimeno paradigma eiani 16px = 1rem*/
-  padding: 0rem;
-}

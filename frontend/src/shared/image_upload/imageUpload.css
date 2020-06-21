@@ -1,19 +1,19 @@
 .image-upload.center {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .image-upload__preview {
-  width: 13rem;
-  height: 13rem;
+  width: 7rem;
+  height: 7rem;
   border: 1px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .image-upload__preview img {
@@ -22,6 +22,32 @@
   object-fit: cover;
 }
 
-.form-control {
-  margin: 1rem 0;
+/* .form-control {
+  margin: 0rem 0;
+} */
+
+.image-button {
+  /* border-radius: 50%; */
+  /* height: 50px;
+  width: 50px; */
+  background-color: #4d6d9a;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  /* padding: 12px 45px; */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* vazo to transition giati meta otan kano to button:active tha elo na to megaloso ligo to button */
+  transition: transform 80ms ease-in;
+  margin: 0;
+  border: 0;
+}
+
+.image-button:active {
+  transform: scale(0.95);
+}
+/* otan patoao to koubi den thelo na exo to galazio border pou vazi aftoamata to browser */
+.image-button:focus {
+  outline: none;
+  transform: scale(1.1);
 }

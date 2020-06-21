@@ -1,0 +1,467 @@
+/* sto diko mou example epeidi aid gia body tha to exo nested mesa se container tha to valo giro giro apo div kai tha valo sto div san class oti csss exo sto body */
+.sign-up-body {
+  /* tha valo to xroma apo to alo tutorial gia na to kano pio oreo */
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+button {
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* vazo to transition giati meta otan kano to button:active tha elo na to megaloso ligo to button */
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+/* otan patoao to koubi den thelo na exo to galazio border pou vazi aftoamata to browser */
+button:focus {
+  outline: none;
+}
+
+/* afto to class to exo sta dio koubia pou alazoun to kouti kai apla gia tin diafora exo valei to background-color transaparante kai etsi to xroma pou vlepo einai to xorma pou exei to div pou einai piso apo to button */
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.container {
+  background: #77a6f7;
+  background: -webkit-linear-gradient(to right, #4d6d9a, #77a6f7);
+  background: linear-gradient(to right, #4d6d9a, #77a6f7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  /* exo valei position relativ giati kapia pragmata hta enai position absolute mesa sto conateinr */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 480px;
+}
+
+/* afto eian gia to xromatiso contier */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  color: #ffffff;
+
+  position: relative;
+  left: -100%;
+  height: 100%;
+
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  /* gia na to kano to welcpme boack pou einai se afto to contaier na erxete ligaki apo ta aristera kai me to javascript tha to vazo sto 0*/
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+@media (max-width: 375px) {
+}
+
+/* to extra csss */
+/* afto to div einai to paralilogramo pou exo olo to contnet mesa */
+
+.login-div {
+  width: 430px;
+  height: 700px;
+  padding: 60px 35px 35px 35px;
+  /* to border radius kanei tis goneis kiklikes */
+  border-radius: 40px;
+  background: #ecf0f3;
+  /* me to box shadow kano fovero 3d efffect */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff; */
+  /*  use box-shadow to create a light effect. Add dark shadow at the bottom right side. Then add bright color shadow at the top left side. This will make the element looks like it has the light source illuminating from the top left corner of the screen. */
+  z-index: 200;
+  position: fixed;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  transition: transform 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.login-div-active {
+  transform: translateX(50%);
+  animation: show-login 0.6s forwards;
+}
+
+@keyframes show-login {
+  0%,
+  49.99% {
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.login-div-login {
+  width: 430px;
+  height: 700px;
+  padding: 60px 35px 35px 35px;
+  /* to border radius kanei tis goneis kiklikes */
+  border-radius: 40px;
+  background: #ecf0f3;
+  /* me to box shadow kano fovero 3d efffect */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff; */
+  z-index: 200;
+  position: fixed;
+  /* transform: translateX(150%); */
+  transform: translateX(50%);
+  /* opacity: 0; */
+  display: none;
+  transition: transform 0.6s ease-in-out;
+}
+
+.login-div-login-active {
+  /* transform: translateX(80%);
+  animation: show-login-2 0.6s forwards; */
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* apo eod kai kato eian igia mesa sto div opote dne pirazei */
+
+/* afto einai gia to logo dne to xriazome se afto pou kano giati den exo oikona ala boro na do poso oreo eaini to kikliko pop up ou exo isios kano kai paromio gia to pos kano previou ti fotgrafia pou anevasa */
+.logo {
+  /* background: url('Logo.png'); */
+  min-width: 100px;
+  min-height: 100px;
+  /* border radius gia na to kano kiklo */
+  border-radius: 50%;
+  /* gia na to valo sto kedro os pros ton orizodio aksona */
+  margin: 0 auto;
+  box-shadow: 
+  /* logo shadow */ 0px 0px 2px #5f5f5f,
+    /* offset */ 0px 0px 0px 5px #ecf0f3, /*bottom right */ 8px 8px 15px #a7aaaf,
+    /* top left */ -8px -8px 15px #ffffff;
+}
+
+/* css gia to text mesa sto form den afora ta input fields ara den to xriazome einai gia ola ta ala text pou exo mesa sto form */
+.title {
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* afot to clas eiani gia to class genika giro apo ta input fields kai leo oti mesa se afto to class kateh input feilds thae exei witdth 100% */
+.fields {
+  width: 100%;
+  padding: 50px 5px 5px 5px;
+}
+/* afto einai styling pou kano me css caslcading dne vazo diko mou class gia ta inputs feids pou malon isos voleoevie na to prostheso san class opos exo to username kai password kai na to onomaso input-feild-class */
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  color: #555;
+  padding: 20px 10px 20px 5px;
+  width: 70%;
+}
+
+/* kai ta dio username kai password class einai akrivos ta idoio pio logiko sto diko mou example na enoso afta ta 2 kai to class apo pano se ena megalo class */
+.username,
+.password {
+  /* vazo marign buttonm gia na min eaini nenomean ta dio input fields */
+  margin-bottom: 30px;
+  /* border radious gia na exoun kikliko sxima */
+  border-radius: 25px;
+  /* kai to box shadow gia na exo to depth effect pu ousiaska exo dio box shado ena fotino kai ena skonito xroma me to idio akrivos values to ena thetika to alo arnitnka */
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+/* gia na alakso to megethos tou svg to fields eiani to parent class apo to eksoteriko div opote malon sto diko mou eksalmple prepei na to alakso afto*/
+.fields svg {
+  height: 22px;
+  margin: 0 10px -3px 25px;
+}
+
+/* css gia ta button kai links dne to xriazome gia to diko mou project */
+.signin-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  /* bori to width na eian ipolu megalo */
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #24cfaa;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  margin: 0;
+}
+.signin-button:hover {
+  background: #2fdbb6;
+}
+.signin-button:active {
+  background: #1da88a;
+}
+
+/* extra class apo palio signup form */
+.fields .toggle-password {
+  cursor: help;
+  font-size: 0.8rem;
+  right: 0;
+  bottom: 0;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  /* margin: 10px 0; */
+  padding: 0;
+  font-size: 0.7rem;
+  text-align: left;
+  color: var(--text-color);
+  margin-left: 10px;
+  /* vazo afto to margin gia na exo oso margin exoun kai ta ala feilds malon na to vgalo */
+  margin-bottom: 30px;
+}
+
+.signin-button:disabled,
+.signin-button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/* Csss gia mikres othones */
+@media (max-width: 550px) {
+  .sign-up-body {
+    /* tha valo to xroma apo to alo tutorial gia na to kano pio oreo */
+    background: #ecf0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .login-div-small {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: #ecf0f3;
+    /* me to box shadow kano fovero 3d efffect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 0.6s ease-in-out;
+    opacity: 1;
+    transform: translateX(0%);
+    z-index: 0;
+  }
+
+  .display-help {
+    display: none;
+  }
+
+  .fields {
+    width: 100%;
+    /* padding: 5px 5px 5px 5px; */
+  }
+
+  .logo {
+    /* background: url('Logo.png'); */
+    width: 100px;
+    height: 100px;
+
+    /* border radius gia na to kano kiklo */
+    border-radius: 50%;
+    /* gia na to valo sto kedro os pros ton orizodio aksona */
+    margin: 0 auto;
+    box-shadow: 
+  /* logo shadow */ 0px 0px 2px #5f5f5f,
+      /* offset */ 0px 0px 0px 5px #ecf0f3,
+      /*bottom right */ 8px 8px 15px #a7aaaf,
+      /* top left */ -8px -8px 15px #ffffff;
+  }
+
+  /* css gia to text mesa sto form den afora ta input fields ara den to xriazome einai gia ola ta ala text pou exo mesa sto form */
+  .title {
+    text-align: center;
+    font-size: 24px;
+    /* padding-top: 24px; */
+    letter-spacing: 0.5px;
+  }
+
+  /* afot to clas eiani gia to class genika giro apo ta input fields kai leo oti mesa se afto to class kateh input feilds thae exei witdth 100% */
+  .fields {
+    width: 90%;
+    padding: 0px 5px 5px 5px;
+    margin: 0 auto;
+  }
+  /* csss for the switch  */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 60px;
+  }
+
+  .switch input {
+    display: none;
+    outline: none;
+    background: none;
+  }
+
+  .switch input:focus {
+    outline: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #77a6f7;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    left: 4px;
+    bottom: 7px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #4d6d9a;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(130px);
+  }
+
+  /*------ ADDED CSS ---------*/
+  .slider:after {
+    content: 'Log in';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    font-family: Verdana, sans-serif;
+  }
+
+  input:checked + .slider:after {
+    content: 'Sign Up';
+  }
+
+  /*--------- END --------*/
+}
