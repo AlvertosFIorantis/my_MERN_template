@@ -6,6 +6,7 @@ import {
   signUpUserAction,
   signUpUserImageAction,
   logInUserAction,
+  loginToken,
 } from '../../_actions/actions/user_actions'
 import ImageUpload from '../../shared/image_upload/imageUpload'
 import { withRouter } from 'react-router-dom'
@@ -505,6 +506,7 @@ const mapDispatchToProps = {
   signUpUserAction: signUpUserAction,
   signUpUserImageAction: signUpUserImageAction,
   logInUserAction: logInUserAction,
+  loginToken: loginToken,
 }
 
 export default connect(

@@ -1,21 +1,21 @@
-const mongoose = require("mongoose");
-const app = require("./app");
+const mongoose = require('mongoose')
+const app = require('./app')
 
 mongoose
-  .connect("mongodb://localhost:27017/my_database", {
+  .connect('mongodb://localhost:27017/my_database', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("connected DB");
-    console.log("app is running on port 5000");
-    return app.listen(5000);
+    console.log('connected DB')
+    console.log('app is running on port 5000')
+    return app.listen(5000)
   })
   .catch((err) => {
-    console.log("not connected");
-    console.log(err);
-  });
+    console.log('not connected')
+    console.log(err)
+  })
 
 // prepei na kano  install kai to mongoDb ektos apo to mongoose
 // GIA TO DB PREPEI NA TREKSO PROTA TO DOCKER CONTAINER ME :
