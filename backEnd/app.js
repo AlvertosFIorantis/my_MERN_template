@@ -7,6 +7,7 @@ const path = require('path')
 const HttpError = require('./error/http-error')
 //kano import ta subrouts gia ta user
 const usersRoutes = require('./routes/users-routes')
+const itemsRoutes = require('./routes/item-routes')
 const cors = require('cors')
 
 const app = express()
@@ -29,6 +30,10 @@ app.use((req, res, next) => {
 
 // gia na boro na kano serve images kia preiep mesa sto static na kano specify to folder pou kano store ta images edo gia pradima einai to upload/images kai to kano me to join gia afto exo "Uplaods"+"images". Otan pao sto url locallhsot5000/upload/images tha boro na to ta files pou exo ekei mesa opote an valo to onoma kapiou file tha boron a to paro apo to server. To provlima me afto einai oti den exo secrurity kai etsi opios exei to url gia ena image bori NA TO DEI !!! Opote kalo einai na do pos boro na kano oste na kano serve statically ena image ala na to vlepei mono aftos pou prepei
 app.use('/uploads/images', express.static(path.join('uploads', 'images')))
+
+// ara tora ekana apply ola ta middleware pou exo grapsi sto items-routes kai afta tah etktelesthoun otan pao se ena apo ola ta urls pou exo kani specify se afto to file
+app.use('/api/items', itemsRoutes)
+// epidi thelo afta ta middlware s na doulevoun mono otan pao sto /api/items/... route kai meta oti thelo kai tha ektelstoun ta ipolipa routes pou exo prepei na kano specify to path sto app.use an gia pardigma sto itemsroutes exo ena / path tote afto tha ektelesthi otan pao sto api/items/
 
 //to kirio route gia na pao se ola ta subroutes pou exou na kanoun me ta users
 app.use('/api/users', usersRoutes)

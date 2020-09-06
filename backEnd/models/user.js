@@ -7,6 +7,9 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true, minlength: 6 },
   image: { type: String },
+  items: [{ type: mongoose.Types.ObjectId, required: true, ref: 'Item' }],
+
+  // gia na ftiakso to connection metaksi userk ai item oste ba exo gia kathe user ola ta items pou eftiakse kai to vazo mesa se array me to [] giro apo to object giati ena user borei na exei multiple items (to array pou exo valei einai ta 2 blue []) !!!!!!!!!!!!
 })
 
 userSchema.plugin(uniqueValidator)
